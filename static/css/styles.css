@@ -1,0 +1,140 @@
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Cinzel", serif;
+    color: white;
+  }
+
+.paragraph {
+    font-size: 30px;
+    color: white;
+
+}
+
+body {
+    background-image: url("../../media/images/renesans66.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    
+}
+
+
+.centered-div{
+    align-items: center;
+    margin-top: 50px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.flex-item {
+    position: relative;
+}
+
+.flex-item img {
+    width: 350px;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 40px;
+    margin-top: 50px;
+}
+
+.details-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.header {
+    justify-content: center;
+    margin-inline: 300px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.nav-left,
+.nav-right {
+    padding: 0 100px; /* Adjust the value according to your preference */
+}
+.nav-right a {
+    margin-right: 50px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-inline: 300px;
+    gap: 50px;
+    
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-inline: 100px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.blur-image {
+    transition: filter 0.2s ease;
+}
+
+.blur-image:hover {
+    filter: blur(5px);
+}
+
+
+.header {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  color: white;
+  font-size: 100px;
+  margin-top: 100px;
+}

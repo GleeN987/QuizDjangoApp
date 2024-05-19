@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="flex-container">
+  <div class="centered-div">
+    {{quiz.title}} 
+  {% for question in questions %}
+    <h1>{{question}}</h1>
+    {% for answer in question.answers.all %}
+    <div>
+      <input type="radio" id="{{answer.id}}" name="{{question.id}}" value="{{answer.id}}" checked />
+      <label for="{{answer.id}}">{{answer.text}}</label>
+    </div>
+  
+      {% endfor %}
+    </div>
+  {%endfor%}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <a href="/">9Lives</a>
+      </div>
+      <div class="nav-right">
+        <a href="/quizzes">Take a quiz!</a>
+        <a href="accounts/login/">Log In</a>
+      </div>
+    </nav>
+    {% block content %}
+    <div class="flex-container">
+      {% for image in images1 %}
+      <div class="tooltip flex-item">
+        <a href="{% url 'details' image.name %}">
+          <img
+            src="{{ image.img.url }}"
+            class="img-fluid blur-image"
+            alt="{{ image.name }}"
+          />
+          <div class="tooltiptext">{{ image.name }}</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="flex-container">
+      {% for image in images2 %}
+      <div class="tooltip flex-item">
+        <a href="{% url 'details' image.name %}">
+          <img
+            src="{{ image.img.url }}"
+            class="img-fluid blur-image"
+            alt="{{ image.name }}"
+          />
+          <div class="tooltiptext">{{ image.name }}</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="flex-container">
+      {% for image in images3 %}
+      <div class="tooltip flex-item">
+        <a href="{% url 'details' image.name %}">
+          <img
+            src="{{ image.img.url }}"
+            class="img-fluid blur-image"
+            alt="{{ image.name }}"
+          />
+          <div class="tooltiptext">{{ image.name }}</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endblock %}
+  </body>
+</html>
