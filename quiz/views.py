@@ -1,14 +1,16 @@
 from django.shortcuts import get_object_or_404, render
 from .models import *
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 def index(request):
+    images = Person.objects.all()
     images1 = Person.objects.all()[:3]
     images2 = Person.objects.all()[3:6]
     images3 = Person.objects.all()[6:]
-    context ={"images1":images1, "images2":images2, "images3": images3}
+    context ={"images": images,"images1":images1, "images2":images2, "images3": images3}
     return render(request, 'index.html', context)
 
+@login_required(login_url='login')
 def quiz(request):
     quizzes = Quiz.objects.filter(public=True)
     context = {"quizzes": quizzes}

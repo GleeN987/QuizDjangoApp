@@ -24,19 +24,22 @@ body {
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+   
 }
 
 .flex-item {
-    position: relative;
+    width: calc((100% - 370px) / 3); /* Adjust width for 3 items per row with gap */
+    max-width: 70%; /* Allow images to resize freely */
+    text-align: center; 
 }
 
 .flex-item img {
     width: 350px;
     height: 300px;
-    display: block;
+    display: inline-block;
     object-fit: cover;
     border-radius: 40px;
     margin-top: 50px;
@@ -71,9 +74,14 @@ nav {
 
 .nav-left,
 .nav-right {
-    padding: 0 100px; /* Adjust the value according to your preference */
+    padding: 0 100px;
+    display: flex;
+    align-items: center; /* Adjust the value according to your preference */
 }
 .nav-right a {
+    margin-right: 50px;
+}
+.nav-right form {
     margin-right: 50px;
 }
 

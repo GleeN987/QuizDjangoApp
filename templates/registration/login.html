@@ -1,6 +1,7 @@
 {% extends 'index.html' %} {% block content %}
 <div class="flex-container">
   <div class="centered-div">
+    <p>(username: user, password: pass)</p>
     <form method="post" action="{%url 'login'%}">
     {% csrf_token %}
     {{form.as_p}}
