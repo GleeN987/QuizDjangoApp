@@ -15,13 +15,6 @@ body {
     background-size: cover;
     
 }
-
-
-.centered-div{
-    align-items: center;
-    margin-top: 50px;
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +23,18 @@ body {
    
 }
 
+.div-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.centered-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
 .flex-item {
     width: calc((100% - 370px) / 3); /* Adjust width for 3 items per row with gap */
     max-width: 70%; /* Allow images to resize freely */
@@ -146,3 +151,11 @@ a {
   font-size: 100px;
   margin-top: 100px;
 }
+
+
+.error {
+    color: red;
+}
+
+
+

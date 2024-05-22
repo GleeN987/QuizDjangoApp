@@ -1,19 +1,23 @@
-{% extends 'index.html' %}
-{% block content %}
-<div class="flex-container">
+{% extends 'index.html' %} {% block content %}
+<div class="div-container">
   <div class="centered-div">
-    {{quiz.title}} 
-  {% for question in questions %}
-    <h1>{{question}}</h1>
-    {% for answer in question.answers.all %}
-    <div>
-      <input type="radio" id="{{answer.id}}" name="{{question.id}}" value="{{answer.id}}" checked />
-      <label for="{{answer.id}}">{{answer.text}}</label>
-    </div>
-  
-      {% endfor %}
-    </div>
-  {%endfor%}
+    {{ quiz.title }}
+    <form method="post" id="quizform" action="{% url 'quiz_submit' quiz.id %}">
+      {% csrf_token %} {% for question in questions %}
+      <h1>{{ question }}</h1>
+      {% for answer in question.answers.all %}
+      <div>
+        <input
+          type="radio"
+          id="answer_{{ answer.id }}"
+          name="question_{{ question.id }}"
+          value="{{ answer.id }}"
+        />
+        <label for="answer_{{ answer.id }}">{{ answer.text }}</label>
+      </div>
+      {% endfor %} {% endfor %}
+      <button type="submit">Submit answers</button>
+    </form>
   </div>
 </div>
 {% endblock %}

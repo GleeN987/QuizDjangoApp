@@ -43,6 +43,18 @@
       </div>
       {% endfor %}
     </div>
-    {% endblock %}
+    {% endblock %} {% if messages %}
+    <div class="flex-container">
+      <div class="centered-div">
+        <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{message.tags}}" {% endif %}>
+            {{message}}
+          </li>
+          {%endfor%}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
   </body>
 </html>
